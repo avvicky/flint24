@@ -13,7 +13,7 @@ async function getData() {
       name: "Flint'24",
       shortDesc: "A National Level Technical Symposium",
       titles: ["November 5'th"],
-      heroImage: "https://i.ibb.co/wNbXqWm/logo-placeholder.jpg",
+      heroImage: "https://i.ibb.co/ZHLsw0j/flint-web-logo.png",
       techStackImages: [
         "https://i.ibb.co/tLB78rn/code-duo.jpg",
         "https://i.ibb.co/x5qRs20/code-debugging.jpg",
@@ -39,18 +39,23 @@ async function getData() {
         category: "Technical",
       },
       {
-        name: "Code-Debugging",
-        image: "https://i.ibb.co/x5qRs20/code-debugging.jpg",
-        category: "Technical",
-      },
-      {
         name: "Code-Duo",
         image: "https://i.ibb.co/tLB78rn/code-duo.jpg",
         category: "Technical",
       },
       {
-        name: "Webinar",
+        name: "Seminar",
         image: "https://i.ibb.co/Z1hCR2B/webinar.jpg",
+        category: "Technical",
+      },
+      {
+        name: "Advertisement",
+        image: "https://i.ibb.co/qpQxTTq/add.jpg",
+        category: "Non-Technical",
+      },
+      {
+        name: "Memes Creation",
+        image: "https://i.ibb.co/wr8Xwbh/meme.jpg",
         category: "Non-Technical",
       },
     ],

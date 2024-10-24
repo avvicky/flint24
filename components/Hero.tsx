@@ -54,7 +54,6 @@ const Hero = ({ mainData }: HeroProps) => {
             Department of Information Technology
           </h1>
           <div className="flex flex-row items-start md:items-center gap-1.5">
-            <h2 className="text-lg md:text-2xl">What you can expect.</h2>
             <Typewriter
               options={{
                 strings: titles,
@@ -73,11 +72,9 @@ const Hero = ({ mainData }: HeroProps) => {
           <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
             {shortDesc}
           </p>
-
           {/* <a href="https://sppuprep.tech" target="_blank" rel="noopener noreferrer" className="relative whitespace-nowrap before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] hover:before:scale-y-100 before:transition-transform before:ease-in-out before:duration-500 before:bg-violet-300 dark:before:bg-violet-600">
                         <span className="relative">SPPU Prep</span>
                     </a> */}
-
           {/* <Link
             className="w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 rounded-md bg-violet-600 hover:bg-violet-700 dark:bg-violet-700 hover:dark:bg-violet-800 transition-colors group text-white"
             // to={"https://github.com/avvicky"}
@@ -91,7 +88,7 @@ const Hero = ({ mainData }: HeroProps) => {
             <IoIosArrowForward className="group-hover:translate-x-1 transition-transform" />
           </Link> */}
           <a
-            href="https://github.com"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdv44m6ni-4_FpsAkAxujVd7lN52gZzdqsKJvmNcDLGBGdj4w/viewform?usp=sf_link"
             className="w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 rounded-md bg-violet-600 hover:bg-violet-700 dark:bg-violet-700 hover:dark:bg-violet-800 transition-colors group text-white"
           >
             Register
@@ -104,7 +101,7 @@ const Hero = ({ mainData }: HeroProps) => {
               alt="avatar"
               width={1000}
               height={1000}
-              className="rounded-full w-full h-full object-cover"
+              className="rounded-full w-full h-full object-contain bg-white"
               src={heroImage}
             />
           </div>
@@ -114,7 +111,7 @@ const Hero = ({ mainData }: HeroProps) => {
               className="rounded-md object-cover"
               src={techStackImages[0]}
               width={100}
-              height={100}
+              height={40}
             />
           </div>
           <div className="absolute grid top-0 -right-12 lg:-right-4 w-14 h-14 bg-white dark:bg-grey-800 rounded-full place-items-center hover:shadow-lg transition-shadow">

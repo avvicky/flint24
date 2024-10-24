@@ -22,7 +22,7 @@ export default function Head() {
       <meta name="twitter:site" content="" />
       <meta name="application-name" content="" />
       <meta name="apple-mobile-web-app-title" content="" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/onlyf.ico" />
       <title>Flint'24</title>
     </>
   );
