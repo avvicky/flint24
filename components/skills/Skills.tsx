@@ -15,7 +15,7 @@ const Skills = ({ skillData }: Props) => {
 
   return (
     <SectionWrapper
-      id="skills"
+      id="events"
       className="min-h-screen mt-12 md:mt-0 mx-4 md:mx-0 xl:my-20 2xl:my-0"
     >
       <h2 className="text-4xl text-center">Events</h2>

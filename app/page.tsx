@@ -10,10 +10,10 @@ async function getData() {
   // const res = await fetch(DB_URL, { cache: "no-store" });
   const data_to_send = {
     main: {
-      name: "Symposium'24",
+      name: "Flint'24",
       shortDesc: "A National Level Technical Symposium",
-      titles: ["November first week", "Networking oppuritunity"],
-      heroImage: "",
+      titles: ["November 5'th"],
+      heroImage: "https://i.ibb.co/wNbXqWm/logo-placeholder.jpg",
       techStackImages: [
         "https://i.ibb.co/tLB78rn/code-duo.jpg",
         "https://i.ibb.co/x5qRs20/code-debugging.jpg",
@@ -31,13 +31,7 @@ async function getData() {
       callUrl: "",
       resumeUrl: "",
     },
-    socials: [
-      {
-        name: "social",
-        icon: "FaInstagram",
-        link: "https://www.instagram.com/",
-      },
-    ],
+    socials: [],
     skills: [
       {
         name: "Paper Presentation",
@@ -100,29 +94,23 @@ async function getData() {
     ],
     educations: [
       {
-        institute: "Inauguration",
-        degree: "9:30AM - 10:15AM",
-        startDate: "2020",
-        endDate: "2022",
-      },
-      {
-        institute: "Paper Presentation",
-        degree: "10:45AM - 1:30PM",
+        institute: "Will be Updated Soon",
+        degree: "",
         startDate: "2020",
         endDate: "2022",
       },
     ],
     experiences: [
       {
-        company: "Registration Start Date",
-        position: "21/10/24",
+        company: "Registration Started",
+        position: "Live",
         startDate: "2020",
         endDate: "2022",
         desc: [],
       },
       {
         company: "Registration End Date",
-        position: "dd/mm/yyyy",
+        position: "03/11/2024",
         startDate: "2022",
         endDate: "present",
         desc: [],

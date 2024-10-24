@@ -2,9 +2,15 @@ export default function Head() {
   return (
     <>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta name="description" content="Technical Sysmposium" />
-      <meta name="keywords" content="Technical Symposium, mahnedra college" />
-      <meta property="og:site_name" content="Symposium" />
+      <meta
+        name="description"
+        content="National Level Technical Symposium Organized by Department of IT, MCE"
+      />
+      <meta
+        name="keywords"
+        content="Technical Symposium, mahnedra college, flint, flint24, flint'24"
+      />
+      <meta property="og:site_name" content="Flint24" />
       <meta property="og:title" content="" />
       <meta property="og:description" content="" />
       <meta property="og:url" content="" />
@@ -17,7 +23,7 @@ export default function Head() {
       <meta name="application-name" content="" />
       <meta name="apple-mobile-web-app-title" content="" />
       <link rel="icon" href="/favicon.ico" />
-      <title>Symposium'24</title>
+      <title>Flint'24</title>
     </>
   );
 }

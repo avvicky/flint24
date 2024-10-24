@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import { Link } from "react-scroll";
 import Typewriter from "typewriter-effect";
 import { IoIosArrowForward } from "react-icons/io";
-import wavingHand from "@/public/waving-hand.gif";
+// import wavingHand from "@/public/waving-hand.gif";
 import { main } from "@/types/main";
 import { Roboto } from "@next/font/google";
 
@@ -90,27 +90,25 @@ const Hero = ({ mainData }: HeroProps) => {
             Register
             <IoIosArrowForward className="group-hover:translate-x-1 transition-transform" />
           </Link> */}
-          <Link
-            href={"https://github.com"}
-            target={"_blank"}
-            to={"http://github.com"}
+          <a
+            href="https://github.com"
+            target="_blank"
             className="w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 rounded-md bg-violet-600 hover:bg-violet-700 dark:bg-violet-700 hover:dark:bg-violet-800 transition-colors group text-white"
           >
             Register
-          </Link>
+          </a>
         </div>
 
         <div className="relative mx-auto lg:mx-0 mt-12 md:mt-16 lg:mt-0">
           <div className="w-56 h-56 md:w-80 md:h-80 lg:-translate-x-16">
-            {/* <Image
+            <Image
               alt="avatar"
               width={1000}
               height={1000}
               className="rounded-full w-full h-full object-cover"
               src={heroImage}
-            /> */}
+            />
           </div>
-
           <div className="absolute grid -top-6 -left-12 lg:-top-14 lg:-left-32 w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-grey-800 rounded-full place-items-center hover:shadow-lg transition-shadow">
             <Image
               alt="tech-stack"
