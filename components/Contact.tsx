@@ -15,6 +15,38 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+
+  //   if (!values.name.trim() || !values.email.trim() || !values.message.trim()) {
+  //     toast.warning("Empty Fields!");
+  //     return false;
+  //   }
+
+  //   setLoading(true);
+  //   axios
+  //     .post("/api/mail", {
+  //       name: values.name,
+  //       email: values.email,
+  //       message: values.message,
+  //     })
+  //     .then((res) => {
+  //       if (res.status === 200) {
+  //         setValues({ name: "", email: "", message: "" });
+  //         setLoading(false);
+  //         setSuccess(true);
+  //         toast.success(res.data.message);
+  //       } else {
+  //         setLoading(false);
+  //         toast.error(res.data.message);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       setLoading(false);
+  //       toast.error(err.message);
+  //     });
+  // };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -24,27 +56,34 @@ const Contact = () => {
     }
 
     setLoading(true);
-    axios
-      .post("/api/mail", {
-        name: values.name,
-        email: values.email,
-        message: values.message,
-      })
-      .then((res) => {
-        if (res.status === 200) {
-          setValues({ name: "", email: "", message: "" });
-          setLoading(false);
-          setSuccess(true);
-          toast.success(res.data.message);
-        } else {
-          setLoading(false);
-          toast.error(res.data.message);
+
+    try {
+      const formData = new FormData();
+      formData.append("name", values.name);
+      formData.append("email", values.email);
+      formData.append("message", values.message);
+
+      const response = await fetch(
+        `https://formsubmit.co/aff42ee037e010e1beb83c299e7a93ae`,
+        {
+          method: "POST",
+          body: formData,
         }
-      })
-      .catch((err) => {
+      );
+
+      if (response.ok) {
+        setValues({ name: "", email: "", message: "" });
         setLoading(false);
-        toast.error(err.message);
-      });
+        setSuccess(true);
+        toast.success("Your message was sent successfully.");
+      } else {
+        setLoading(false);
+        toast.error("There was an error sending your message.");
+      }
+    } catch (err) {
+      setLoading(false);
+      toast.error("There was an error sending your message.");
+    }
   };
 
   const handleChange = (

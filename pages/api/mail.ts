@@ -1,7 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import sgMail from "@sendgrid/mail";
-
-sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
+import axios from "axios";
 
 type Data = {
     message: string;
@@ -17,19 +15,29 @@ export default async function handler(
             email,
             message,
         }: { name: string; email: string; message: string } = req.body;
-        const msg = `Name: ${name}\r\n Email: ${email}\r\n Message: ${message}`;
+
+        const subject = `${name.toUpperCase()} sent you a message from Portfolio`;
+        const bodyHtml = `Name: ${name}<br>Email: ${email}<br>Message: ${message}`;
+        const bodyText = `Name: ${name}\r\nEmail: ${email}\r\nMessage: ${message}`;
+        console.log(process.env.MAIL_FROM,process.env.MAIL_TO,process.env.ELASTIC_EMAIL_API_KEY);
         const data = {
-            to: process.env.MAIL_TO as string,
-            from: process.env.MAIL_FROM as string,
-            subject: `${name.toUpperCase()} sent you a message from Portfolio`,
-            text: `Email => ${email}`,
-            html: msg.replace(/\r\n/g, "<br>"),
+            apikey: process.env.ELASTIC_EMAIL_API_KEY,
+            subject,
+            from: process.env.MAIL_FROM,
+            to: process.env.MAIL_TO,
+            bodyHtml,
+            bodyText,
+            isTransactional: true,
         };
+
         try {
-            await sgMail.send(data);
+            await axios.post('https://api.elasticemail.com/v2/email/send', data);
             res.status(200).json({ message: "Your message was sent successfully." });
         } catch (err) {
             res.status(500).json({ message: `There was an error sending your message. ${err}` });
         }
+    } else {
+        res.setHeader("Allow", ["POST"]);
+        res.status(405).end(`Method ${req.method} Not Allowed`);
     }
 }
