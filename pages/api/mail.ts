@@ -10,28 +10,26 @@ export default async function handler(
     res: NextApiResponse<Data>
 ) {
     if (req.method === "POST") {
-        const {
-            name,
-            email,
-            message,
-        }: { name: string; email: string; message: string } = req.body;
+        const { name, email, message }: { name: string; email: string; message: string } = req.body;
 
-        const subject = `${name.toUpperCase()} sent you a message from Portfolio`;
-        const bodyHtml = `Name: ${name}<br>Email: ${email}<br>Message: ${message}`;
-        const bodyText = `Name: ${name}\r\nEmail: ${email}\r\nMessage: ${message}`;
-        console.log(process.env.MAIL_FROM,process.env.MAIL_TO,process.env.ELASTIC_EMAIL_API_KEY);
+        // EmailJS-specific data format
         const data = {
-            apikey: process.env.ELASTIC_EMAIL_API_KEY,
-            subject,
-            from: process.env.MAIL_FROM,
-            to: process.env.MAIL_TO,
-            bodyHtml,
-            bodyText,
-            isTransactional: true,
+            service_id: process.env.EMAILJS_SERVICE_ID, // Replace with actual environment variable
+            template_id: process.env.EMAILJS_TEMPLATE_ID, // Replace with actual environment variable
+            user_id: process.env.EMAILJS_USER_ID, // Replace with actual environment variable
+            template_params: {
+                'username': name,
+                'email': email,
+                'message': message,
+            },
         };
-
+        console.log(data);
         try {
-            await axios.post('https://api.elasticemail.com/v2/email/send', data);
+            await axios.post('https://api.emailjs.com/api/v1.0/email/send', data, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
             res.status(200).json({ message: "Your message was sent successfully." });
         } catch (err) {
             res.status(500).json({ message: `There was an error sending your message. ${err}` });

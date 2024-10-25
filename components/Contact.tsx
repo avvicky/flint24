@@ -1,10 +1,28 @@
-import axios from "axios";
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { BiLoaderAlt } from "react-icons/bi";
 import SectionWrapper from "./SectionWrapper";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+
+// emailjs.init({
+//   publicKey: process.env.EMAILJS_PUBLIC_KEY,
+//   // Do not allow headless browsers
+//   blockHeadless: true,
+//   blockList: {
+//     // Block the suspended emails
+//     list: ["abc@emailjs.com"],
+//     // The variable contains the email address
+//     watchVariable: "userEmail",
+//   },
+//   limitRate: {
+//     // Set the limit rate for the application
+//     id: "app",
+//     // Allow 1 request per 10s
+//     throttle: 10000,
+//   },
+// });
 
 const Contact = () => {
   const [values, setValues] = useState({
@@ -15,38 +33,6 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-
-  //   if (!values.name.trim() || !values.email.trim() || !values.message.trim()) {
-  //     toast.warning("Empty Fields!");
-  //     return false;
-  //   }
-
-  //   setLoading(true);
-  //   axios
-  //     .post("/api/mail", {
-  //       name: values.name,
-  //       email: values.email,
-  //       message: values.message,
-  //     })
-  //     .then((res) => {
-  //       if (res.status === 200) {
-  //         setValues({ name: "", email: "", message: "" });
-  //         setLoading(false);
-  //         setSuccess(true);
-  //         toast.success(res.data.message);
-  //       } else {
-  //         setLoading(false);
-  //         toast.error(res.data.message);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       setLoading(false);
-  //       toast.error(err.message);
-  //     });
-  // };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -56,34 +42,39 @@ const Contact = () => {
     }
 
     setLoading(true);
+    emailjs.init(
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        ? process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        : ""
+    );
 
-    try {
-      const formData = new FormData();
-      formData.append("name", values.name);
-      formData.append("email", values.email);
-      formData.append("message", values.message);
-      // something that i writen
-      const response = await fetch(
-        `https://formsubmit.co/aff42ee037e010e1beb83c299e7a93ae`,
+    emailjs
+      .send(
+        !process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+          ? ""
+          : process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+          ? ""
+          : process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         {
-          method: "POST",
-          body: formData,
+          name: values.name,
+          mail_id: values.email,
+          message: values.message,
+        }
+      )
+      .then(
+        () => {
+          setValues({ name: "", email: "", message: "" });
+          setLoading(false);
+          setSuccess(true);
+          toast.success("Your message was sent successfully.");
+        },
+        (error) => {
+          setLoading(false);
+          toast.error("There was an error sending your message.");
+          console.error("Email send failed...", error);
         }
       );
-
-      if (response.ok) {
-        setValues({ name: "", email: "", message: "" });
-        setLoading(false);
-        setSuccess(true);
-        toast.success("Your message was sent successfully.");
-      } else {
-        setLoading(false);
-        toast.error("There was an error sending your message.");
-      }
-    } catch (err) {
-      setLoading(false);
-      toast.error("There was an error sending your message.");
-    }
   };
 
   const handleChange = (
@@ -103,7 +94,6 @@ const Contact = () => {
       <ToastContainer />
 
       <div className="w-full lg:w-5/6 2xl:w-3/4 mt-10 md:mt-16 mx-auto flex justify-between rounded-xl">
-        {/* blurDataURL="https://i.imgur.com/owZdhjA.png" */}
         <Image
           unoptimized={true}
           quality={100}

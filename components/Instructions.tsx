@@ -1,5 +1,7 @@
 import SectionWrapper from "./SectionWrapper";
 
+
+
 const Instructions = () => {
   return (
     <SectionWrapper id="instructions" className="mb-16 mx-4 lg:mx-0">
