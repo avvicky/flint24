@@ -17,6 +17,17 @@ const Instructions = () => {
             submit the PowerPoint file by{" "}
             <span className="font-medium">03/11/2024</span>.
           </p>
+          <p>Example Mail format</p>
+          <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mt-2 text-left">
+            <ul className="list-none">
+              <li>Name:</li>
+              <li>Team Member Name:</li>
+              <li>Contact No:</li>
+              <li>Alternate Contact No:</li>
+              <li>Topic:</li>
+              <li>PPT file Name:</li>
+            </ul>
+          </p>
         </div>
 
         <div>
