@@ -54,7 +54,7 @@ async function getData() {
         category: "Non-Technical",
       },
       {
-        name: "Memes Creation",
+        name: "Memory Puzzle",
         image: "https://i.ibb.co/wr8Xwbh/meme.jpg",
         category: "Non-Technical",
       },

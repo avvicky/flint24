@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/skills/Skills";
 import Projects from "@/components/projects/Projects";
+import Instructions from "@/components/Instructions";
 import Socials from "@/components/Socials";
 import Experiences from "@/components/experiences/Experiences";
 import Contact from "@/components/Contact";
@@ -23,6 +24,7 @@ const HomePage = ({ data }: Props) => {
       {/* <Socials socials={data.socials} /> */}
       {/* <About aboutData={data.about} name={data.main.name} /> */}
       <Skills skillData={data.skills} />
+      <Instructions />
       {/* <Projects projectsData={data.projects} /> */}
       <Experiences
         experienceData={data.experiences}
