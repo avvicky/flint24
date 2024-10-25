@@ -93,6 +93,9 @@ const Hero = ({ mainData }: HeroProps) => {
           >
             Register
           </a>
+          <p className="text-sm  md:text-lg font-bold relative text-red-700 dark:text-violet-600">
+            No Spot Registration
+          </p>
         </div>
 
         <div className="relative mx-auto lg:mx-0 mt-12 md:mt-16 lg:mt-0">
