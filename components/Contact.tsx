@@ -149,6 +149,15 @@ const Contact = () => {
               )}
             </button>
           </form>
+          <div className="pt-2 flex justify-center text-justify flex-col">
+            <p className="">MobileNO:</p>
+            <p>
+              <strong>Vignesh A:</strong> 6382903834
+            </p>
+            <p>
+              <strong>Thangadurai G:</strong> 9342821507
+            </p>
+          </div>
         </div>
       </div>
     </SectionWrapper>

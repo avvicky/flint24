@@ -1,7 +1,5 @@
 import SectionWrapper from "./SectionWrapper";
 
-
-
 const Instructions = () => {
   return (
     <SectionWrapper id="instructions" className="mb-16 mx-4 lg:mx-0">
@@ -49,19 +47,22 @@ const Instructions = () => {
           </p>
           <ul className="text-sm md:text-base list-disc list-inside mt-4 space-y-2 text-gray-600 dark:text-gray-300">
             <li>
-              <strong>Round 1:</strong> Participants will answer multiple-choice
-              questions on computer applications and basic computing concepts.
+              <strong>Round 1:</strong> Participants will answer 15
+              multiple-choice questions on computer applications and basic
+              computing concepts.
             </li>
             <li>
               <strong>Round 2:</strong> Teams will be assigned to designated
               systems, where they must debug two programs in any of the allowed
-              languages (Java, C, C++, or Python).
+              languages (Java, C, C++, or Python).{" "}
+              <strong>Difficulty Level: Easy</strong>
             </li>
             <li>
               <strong>Round 3:</strong> Participants will solve two questions on
               basic DSA, using any of the allowed languages (Java, C, C++, or
-              Python).
+              Python). <strong>Difficulty Level: Easy</strong>
             </li>
+            <li>Quastions mostly asked from String and Array.</li>
           </ul>
         </div>
       </div>
