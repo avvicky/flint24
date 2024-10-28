@@ -65,6 +65,30 @@ const Instructions = () => {
             <li>Quastions mostly asked from String and Array.</li>
           </ul>
         </div>
+        <div>
+          <h1 className="text-lg md:text-xl font-semibold text-center">
+            Seminor
+          </h1>
+          <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mt-2 text-left">
+            <ul className="list-none flex flex-col gap-1">
+              <li>
+                <span className="font-semibold">Seminar Title:</span> Green
+                Technology Innovations: Shaping a Sustainable Future
+              </li>
+              {/* <li className="font-semibold">Description:</li>
+              <li>
+                {" "}
+                Discover the latest in green technology driving sustainable
+                change. This seminar covers innovations in renewable energy,
+                carbon reduction, and eco-friendly practices, presented by
+                industry experts. Learn about the real-world impact of these
+                advancements and explore solutions for a greener, resilient
+                future. Perfect for professionals, students, and sustainability
+                enthusiasts.
+              </li> */}
+            </ul>
+          </p>
+        </div>
       </div>
     </SectionWrapper>
   );

@@ -93,8 +93,11 @@ const Hero = ({ mainData }: HeroProps) => {
           >
             Register
           </a>
-          <p className="text-sm  md:text-lg font-bold relative text-red-700 dark:text-violet-600">
-            No Spot Registration
+          <p className="text-sm  md:text-md font-bold relative dark:text-violet-600">
+            Registration Fee: <span className="">₹250</span> per head
+          </p>
+          <p className="text-sm  md:text-md font-bold relative text-red-500 dark:text-violet-600">
+            On-Spot Registration is limited [50].
           </p>
         </div>
 
