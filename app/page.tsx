@@ -13,9 +13,7 @@ async function getData() {
       name: "Flint'24",
       shortDesc: "A National Level Technical Symposium",
       titles: [
-        "November 5'th",
-        "Only 150 spots are available",
-        "Register to confirm you spot",
+        "postponed to Later Date"
       ],
       heroImage: "https://i.ibb.co/ZHLsw0j/flint-web-logo.png",
       techStackImages: [
