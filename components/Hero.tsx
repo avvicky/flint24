@@ -88,17 +88,17 @@ const Hero = ({ mainData }: HeroProps) => {
             <IoIosArrowForward className="group-hover:translate-x-1 transition-transform" />
           </Link> */}
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdv44m6ni-4_FpsAkAxujVd7lN52gZzdqsKJvmNcDLGBGdj4w/viewform?usp=sf_link"
-            className="w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 rounded-md bg-violet-600 hover:bg-violet-700 dark:bg-violet-700 hover:dark:bg-violet-800 transition-colors group text-white"
+            href="#"
+            className="w-fit text-sm md:text-base py-2 px-4 cursor-pointer flex items-center gap-1 rounded-md bg-gray-600 hover:bg-gray-700 dark:bg-violet-700 hover:dark:bg-violet-800 transition-colors group text-white"
           >
             Register
           </a>
           <p className="text-sm  md:text-md font-bold relative dark:text-violet-600">
             Registration Fee: <span className="">₹250</span> per head
           </p>
-          <p className="text-sm  md:text-md font-bold relative text-red-500 dark:text-violet-600">
+{/*           <p className="text-sm  md:text-md font-bold relative text-red-500 dark:text-violet-600">
             On-Spot Registration is limited [50].
-          </p>
+          </p> */}
         </div>
 
         <div className="relative mx-auto lg:mx-0 mt-12 md:mt-16 lg:mt-0">
